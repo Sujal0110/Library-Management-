@@ -1,0 +1,84 @@
+.contact-page {
+    padding: 20px;
+}
+
+/* Header */
+.contact-header {
+    background: linear-gradient(to right, #0f172a, #1e40af);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.contact-header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+/* Content */
+.contact-content {
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    background: #f1f5f9;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contact-info h2 {
+    margin-bottom: 15px;
+}
+
+.contact-info ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+}
+
+.contact-form button {
+    padding: 12px;
+    width: 100%;
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #1e3a8a;
+}

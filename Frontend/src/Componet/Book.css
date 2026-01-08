@@ -1,0 +1,52 @@
+.books-page {
+    padding: 20px;
+}
+
+/* Header */
+.books-header {
+    background: linear-gradient(to right, #0f172a, #1e40af);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.books-header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.books-header p {
+    font-size: 18px;
+}
+
+/* Table Section */
+.books-table-section {
+    margin-top: 50px;
+    overflow-x: auto;
+}
+
+.books-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.books-table th,
+.books-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.books-table th {
+    background-color: #1e293b;
+    color: white;
+}
+
+.books-table tr:hover {
+    background-color: #f1f5f9;
+}

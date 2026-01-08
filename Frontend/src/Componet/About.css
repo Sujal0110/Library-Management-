@@ -1,0 +1,77 @@
+.about {
+    padding: 20px;
+}
+
+/* Hero */
+.about-hero {
+    background: linear-gradient(to right, #0f172a, #1e40af);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.about-hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.about-hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Mission */
+.mission {
+    margin-top: 60px;
+    background: #f1f5f9;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.mission h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* Highlights */
+.highlights {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.highlights h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.highlight-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 280px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* Footer Note */
+.about-footer {
+    margin-top: 70px;
+    background: #0f172a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
