@@ -9,7 +9,7 @@ const ReturnBook = () => {
     const [userId, setUserId] = useState("");
     const [bookId, setBookId] = useState("");
     const notify = () =>
-        toast.error("Book Submited", {
+        toast.success("Book Submited", {
             position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,

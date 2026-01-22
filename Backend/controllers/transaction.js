@@ -9,7 +9,7 @@ exports.getTransactionDetails = async (req) => {
         if (req.query.book_id) {
             whereCondition += ` AND transaction."bookid" =${req.query.book_id} `;
         }
-        const query = `select transaction.id, customer.id as user_id, transaction."userid",transaction."issue_date",transaction."return_date",transaction."fine", customer.name as user_name , transaction."bookid" ,books.name as book_name from transaction 
+        const query = `select transaction.id, customer.id as user_id, transaction."userid",transaction."issue_date",transaction."due_date",transaction."return_date",transaction."fine", customer.name as user_name , transaction."bookid" ,books.name as book_name from transaction 
 inner join customer on customer.id = transaction."userid" 
 inner join books on books.id = transaction."bookid" where 1=1 ${whereCondition}`;
 
@@ -33,27 +33,7 @@ exports.isssueBook = async (req) => {
     try {
         let reqBody = req.body;
         console.log(reqBody);
-        const query = `INSERT INTO transaction (userid, bookid, issue_date, return_date, fine) VALUES (${reqBody.userId}, ${reqBody.bookId}, CURRENT_DATE, NULL, 0)`;
-
-        const result = await dbUtil.query(query);
-        return {
-            status: 200,
-            data: result,
-        };
-    } catch (error) {
-        return {
-            status: 500,
-            data: {
-                code: 500,
-                message: "Something went wrong while adding book",
-            },
-        };
-    }
-};
-exports.getIssuedBook = async (req) => {
-    try {
-        let reqBody = req.body;
-        const query = `INSERT INTO transaction (userid, bookid, issue_date, return_date, fine) VALUES (${reqBody.userId}, ${reqBody.bookId}, CURRENT_DATE, NULL, 0)`;
+        const query = `INSERT INTO transaction (userid, bookid, issue_date, return_date, fine, due_date) VALUES (${reqBody.userId}, ${reqBody.bookId}, CURRENT_DATE, NULL, 0, CURRENT_DATE)`;
 
         const result = await dbUtil.query(query);
         return {
@@ -98,7 +78,8 @@ exports.returnBook = async (req) => {
     try {
         const { user_id, book_id } = req.query;
         const query = `UPDATE transaction 
-        SET return_date = CURRENT_DATE
+        SET return_date = CURRENT_DATE, 
+        fine = GREATEST(CURRENT_DATE - due_date, 0) * 5
         WHERE userid = ${user_id} AND bookid = ${book_id}`;
 
         const result = await dbUtil.query(query);
@@ -108,6 +89,7 @@ exports.returnBook = async (req) => {
             data: result,
         };
     } catch (error) {
+        console.log(error);
         return {
             status: 500,
             data: {

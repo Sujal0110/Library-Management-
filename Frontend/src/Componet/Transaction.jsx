@@ -126,6 +126,7 @@ const Transaction = () => {
                                 <th>User Name</th>
                                 <th>Book Name</th>
                                 <th>Issue Date</th>
+                                <th>Due Date</th>
                                 <th>Return Date</th>
                                 <th>Fine</th>
                             </tr>
@@ -136,10 +137,21 @@ const Transaction = () => {
                                 <tr key={item.id}>
                                     <td>{item.user_name}</td>
                                     <td>{item.book_name}</td>
-                                    <td>{item.issue_date}</td>
+                                    <td>
+                                        {new Date(
+                                            item.issue_date
+                                        ).toLocaleDateString("en-IN")}
+                                    </td>
+                                    <td>
+                                        {new Date(
+                                            item.due_date
+                                        ).toLocaleDateString("en-IN")}
+                                    </td>
                                     <td>
                                         {item.return_date
-                                            ? item.return_date
+                                            ? new Date(
+                                                  item.return_date
+                                              ).toLocaleDateString("en-IN")
                                             : "Not Returned"}
                                     </td>
                                     <td>{item.fine}</td>
