@@ -61,6 +61,7 @@ export const UserRegistration = () => {
                                 type="text"
                                 placeholder="Enter your name"
                                 required
+                                value={name}
                                 onChange={(e) => {
                                     setName(e.target.value);
                                 }}
@@ -73,6 +74,7 @@ export const UserRegistration = () => {
                                 type="email"
                                 placeholder="Enter your email"
                                 required
+                                value={email}
                                 onChange={(e) => {
                                     setEmail(e.target.value);
                                 }}
@@ -85,6 +87,7 @@ export const UserRegistration = () => {
                                 type="number"
                                 placeholder="Enter your age"
                                 required
+                                value={age}
                                 onChange={(e) => {
                                     setAge(e.target.value);
                                 }}
@@ -97,6 +100,7 @@ export const UserRegistration = () => {
                                 rows="3"
                                 placeholder="Enter your address"
                                 required
+                                value={address}
                                 onChange={(e) => {
                                     setAddress(e.target.value);
                                 }}></textarea>

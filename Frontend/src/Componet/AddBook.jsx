@@ -38,6 +38,10 @@ const AddBook = () => {
 
             const data = await response.json();
             console.log("Book added successfully:", data);
+            setbookName("");
+            setAuthorName("");
+            setBookCatogory("");
+            setBookDesc("");
             notify();
         } catch (error) {
             console.log(`Error creating post: ${error.message}`);
@@ -55,6 +59,7 @@ const AddBook = () => {
                         className="form-control w-25"
                         id="exampleInputName"
                         aria-describedby="emailHelp"
+                        value={bookName}
                         onChange={(e) => {
                             setbookName(e.target.value);
                         }}
@@ -68,6 +73,7 @@ const AddBook = () => {
                         className="form-control w-25"
                         id="exampleInputAuthor"
                         aria-describedby="emailHelp"
+                        value={authorName}
                         onChange={(e) => {
                             setAuthorName(e.target.value);
                         }}
@@ -81,6 +87,7 @@ const AddBook = () => {
                         className="form-control w-25"
                         id="InputCategory"
                         aria-describedby="emailHelp"
+                        value={bookCatogory}
                         onChange={(e) => {
                             setBookCatogory(e.target.value);
                         }}
@@ -95,6 +102,7 @@ const AddBook = () => {
                         name="desc"
                         className="form-control w-25"
                         id="exampleInputDesc"
+                        value={bookDesc}
                         onChange={(e) => {
                             setBookDesc(e.target.value);
                         }}></textarea>
