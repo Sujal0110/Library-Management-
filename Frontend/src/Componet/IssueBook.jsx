@@ -74,6 +74,8 @@ const IssueBook = () => {
         );
 
         if (response.ok) {
+            setUserId("");
+            setBookId("");
             notify();
         }
     };

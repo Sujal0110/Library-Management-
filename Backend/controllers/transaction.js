@@ -33,7 +33,7 @@ exports.isssueBook = async (req) => {
     try {
         let reqBody = req.body;
         console.log(reqBody);
-        const query = `INSERT INTO transaction (userid, bookid, issue_date, return_date, fine, due_date) VALUES (${reqBody.userId}, ${reqBody.bookId}, CURRENT_DATE, NULL, 0, CURRENT_DATE)`;
+        const query = `INSERT INTO transaction (userid, bookid, issue_date, return_date, fine, due_date) VALUES (${reqBody.userId}, ${reqBody.bookId}, CURRENT_DATE, NULL, 0, CURRENT_DATE + INTERVAL '7 days')`;
 
         const result = await dbUtil.query(query);
         return {

@@ -68,6 +68,8 @@ const ReturnBook = () => {
             }
             const data = await response.json();
             console.log(data);
+            setUserId("");
+            setBookId("");
             notify();
         } catch (error) {
             console.error("Error fetching Users:", error);
@@ -117,6 +119,7 @@ const ReturnBook = () => {
                                 id="bookName"
                                 className="form-select"
                                 aria-label="Default select example"
+                                value={bookId}
                                 onChange={(e) => {
                                     setBookId(e.target.value);
                                 }}>
